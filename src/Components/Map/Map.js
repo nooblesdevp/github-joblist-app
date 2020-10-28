@@ -1,22 +1,44 @@
-import React from "react";
-import { Map as LeafletMap, TileLayer } from "react-leaflet";
+import React, { Component } from "react";
+import { Map as LeafletMap, Marker, Popup, TileLayer } from "react-leaflet";
+import { geolocated } from "react-geolocated";
 
 import "./Map.scss";
 
-function Map() {
-  const DEFAULT_LATITUDE = -7.257472;
-  const DEFUALT_LANGITUDE = 112.75209;
+const DEFAULT_LONGITUDE = 112.75209;
+const DEFAULT_LATITUDE = -7.257472;
 
-  return (
-    <div className="map">
-      <LeafletMap center={[DEFAULT_LATITUDE, DEFUALT_LANGITUDE]} zoom={12}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        />
-      </LeafletMap>
-    </div>
-  );
+class Map extends Component {
+  render() {
+    const longitude = this.props.coords
+      ? this.props.coords.longitude
+      : DEFAULT_LONGITUDE;
+    const latitude = this.props.coords
+      ? this.props.coords.latitude
+      : DEFAULT_LATITUDE;
+
+    return (
+      <div className="map">
+        <LeafletMap center={[longitude, latitude]} zoom={15}>
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          />
+          {!this.props.coords ? (
+            <h1>loading</h1>
+          ) : (
+            <Marker position={[longitude, latitude]}>
+              <Popup>yoo</Popup>
+            </Marker>
+          )}
+        </LeafletMap>
+      </div>
+    );
+  }
 }
 
-export default Map;
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: false,
+  },
+  userDecisionTimeout: 5000,
+})(Map);

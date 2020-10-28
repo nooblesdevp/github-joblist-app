@@ -31,4 +31,22 @@
 }
 .modal__footer {
   border-top: none;
+  justify-content: space-between;
+  button {
+    border-radius: 10px;
+    height: 40px;
+  }
+  .modal__footerBtnright {
+    flex: 1;
+    border: none;
+    background: var(--clr-primary-1);
+  }
+  .modal__footerBtnleft {
+    border: 1px solid var(--clr-primary-1);
+    background: transparent;
+    color: var(--clr-primary-1);
+    svg {
+      color: var(--clr-primary-1);
+    }
+  }
 }

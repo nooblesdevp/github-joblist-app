@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import { MdPlace } from "react-icons/md";
+import { MdPlace, MdFavoriteBorder } from "react-icons/md";
 import Map from "../Map/Map";
 
 // import "leaflet/dist/leaflet.css";
@@ -39,7 +39,12 @@ export function ModalDescription({ company, title, location, desc, ...props }) {
         </div>
       </Modal.Body>
       <Modal.Footer className="modal__footer">
-        <Button onClick={props.onHide}>Close</Button>
+        <Button className="modal__footerBtnleft" onClick={props.onHide}>
+          <MdFavoriteBorder className="modal__footerBtnleft__icon" />
+        </Button>
+        <Button className="modal__footerBtnright" onClick={props.onHide}>
+          Apply Now
+        </Button>
       </Modal.Footer>
     </Modal>
   );
