@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Card, Col, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Card } from "react-bootstrap";
 import { ModalDescription } from "../ModalDesc/ModalDesc";
 
 import "./JobsCard.scss";
@@ -9,7 +8,6 @@ function JobCard({ job }) {
   const [modalShow, setModalShow] = useState(false);
 
   const randomImg = "https://via.placeholder.com/70";
-  const imgLogo = job.company_logo;
 
   const addDefaultSrc = (e) => {
     e.target.src = randomImg;
@@ -23,7 +21,7 @@ function JobCard({ job }) {
           <div className="d-flex justify-content-between">
             <img
               className="jobCard__img"
-              src={imgLogo}
+              src={job.company_logo}
               alt=""
               onError={addDefaultSrc}
             />

@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import JobsList from "./Components/JobsList/JobsList";
 import Login from "./Components/Login/Login";
 import ModalDesc from "./Components/ModalDesc/ModalDesc";
+import MyAppFav from "./Components/MyApp/MyAppFav";
+import MyAppProgress from "./Components/MyApp/MyAppProgress";
 
 function App() {
   return (
@@ -18,6 +20,12 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/favorite">
+            <MyAppFav />
+          </Route>
+          <Route path="/progress">
+            <MyAppProgress />
           </Route>
           <Route exact path="/">
             <Category />

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { Button, Container, FormControl, InputGroup } from "react-bootstrap";
-import { useStateValue } from "../../Provider";
 import { VscSettings } from "react-icons/vsc";
 import "./JobsList.scss";
-import axios from "axios";
-import { ACTIONS } from "../../reducer";
 import JobCard from "../Card/JobCard";
 import useFatchData from "../useFatchData/useFatchData";
 import InfiniteScroll from "react-infinite-scroll-component";
