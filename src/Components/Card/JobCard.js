@@ -39,7 +39,14 @@ function JobCard({ job }) {
           </div>
         </Card.Body>
       </Card>
-      <ModalDescription show={modalShow} onHide={() => setModalShow(false)} />
+      <ModalDescription
+        company={job.company}
+        title={job.title}
+        location={job.location}
+        desc={job.description}
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       {/* </Link> */}
     </>
   );

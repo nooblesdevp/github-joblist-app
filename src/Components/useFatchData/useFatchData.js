@@ -12,11 +12,11 @@ export default function useFatchData(params, page) {
     "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
 
   useEffect(() => {
-    const cancelToken1 = axios.CancelToken.source();
+    const cancelToken = axios.CancelToken.source();
     dispatch({ type: ACTIONS.MAKE_REQUEST });
     axios
       .get(BASE_URL, {
-        cancelToken: cancelToken1.token,
+        cancelToken: cancelToken.token,
         params: { markdown: true, page: page, ...params },
       })
       .then((res) => {
