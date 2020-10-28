@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { MdPlace, MdFavoriteBorder } from "react-icons/md";
 import Map from "../Map/Map";
+import { ModalLogin } from "../ModalLogin/ModalLogin";
 
 // import "leaflet/dist/leaflet.css";
 
@@ -11,9 +12,11 @@ export function ModalDescription({ company, title, location, desc, ...props }) {
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + " ..." : str;
   }
+  const [modalShow, setModalShow] = useState(false);
 
   return (
     <Modal
+      className="modalDesc"
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
@@ -39,13 +42,17 @@ export function ModalDescription({ company, title, location, desc, ...props }) {
         </div>
       </Modal.Body>
       <Modal.Footer className="modal__footer">
-        <Button className="modal__footerBtnleft" onClick={props.onHide}>
+        <Button
+          className="modal__footerBtnleft"
+          onClick={() => setModalShow(true)}
+        >
           <MdFavoriteBorder className="modal__footerBtnleft__icon" />
         </Button>
         <Button className="modal__footerBtnright" onClick={props.onHide}>
           Apply Now
         </Button>
       </Modal.Footer>
+      <ModalLogin show={modalShow} onHide={() => setModalShow(false)} />
     </Modal>
   );
 }

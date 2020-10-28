@@ -8,6 +8,9 @@ import axios from "axios";
 import { ACTIONS } from "../../reducer";
 import JobCard from "../Card/JobCard";
 import useFatchData from "../useFatchData/useFatchData";
+import InfiniteScroll from "react-infinite-scroll-component";
+import CurveLoading from "../../assets/CurveLoading.gif";
+import error from "../../assets/error.gif";
 
 function JobsList() {
   // const [{ jobs }, dispatch] = useStateValue();
@@ -19,9 +22,6 @@ function JobsList() {
 
   return (
     <Container className="jobsList">
-      {loading && <h1>loading</h1>}
-      {error && <h1>error hguys</h1>}
-
       <div className="header__top">
         <h2>Lastest Gigs </h2>
         <div className="header__inputContainer">
@@ -43,10 +43,18 @@ function JobsList() {
           </Button>
         </div>
       </div>
+      {/* {loading && <img src={CurveLoading} alt="" />}
+      {error && <img src={error} alt="" />} */}
       <div className="jobList__gird">
-        {jobs.map((job) => {
-          return <JobCard key={job.id} job={job} />;
-        })}
+        <InfiniteScroll
+          dataLength={jobs.length}
+          next={() => setPage(page + 1)}
+          hasMore={true}
+        >
+          {jobs.map((job) => {
+            return <JobCard key={job.id} job={job} />;
+          })}
+        </InfiniteScroll>
       </div>
     </Container>
   );

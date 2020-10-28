@@ -1,3 +1,10 @@
+.modal-dialog {
+  margin: 0;
+}
+.modal-content {
+  border: none;
+  height: 100vh;
+}
 .modal__heading {
   margin-top: -27px;
   z-index: 99;
@@ -8,6 +15,7 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   background: var(--clr-primary-6);
+  text-align: center;
 
   .modal__headingCompany {
     color: var(--clr-primary-3);
@@ -34,7 +42,7 @@
   justify-content: space-between;
   button {
     border-radius: 10px;
-    height: 40px;
+    height: 50px;
   }
   .modal__footerBtnright {
     flex: 1;
@@ -42,8 +50,9 @@
     background: var(--clr-primary-1);
   }
   .modal__footerBtnleft {
-    border: 1px solid var(--clr-primary-1);
+    border: 1px solid var(--clr-primary-5);
     background: transparent;
+    flex: 0.1;
     color: var(--clr-primary-1);
     svg {
       color: var(--clr-primary-1);

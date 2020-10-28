@@ -1,0 +1,28 @@
+.modalLogin {
+  margin-top: 50vh;
+  height: 40vh;
+  background: rgba(0, 0, 0, 0.342);
+  .modalLogin__center {
+    margin-top: 50px;
+    border: 2px solid var(--clr-primary-4);
+    border-radius: 15px;
+    height: 200px;
+    background: var(--clr-primary-6);
+
+    .ModalLogin__header {
+    }
+    .modalLogin__footer {
+      justify-content: space-between;
+      button {
+        margin-top: 50px;
+        flex: 1;
+        border-radius: 10px;
+        height: 50px;
+        background: var(--clr-primary-1);
+        a {
+          color: var(--clr-primary-6);
+        }
+      }
+    }
+  }
+}
