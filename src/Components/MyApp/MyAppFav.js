@@ -1,8 +1,12 @@
 import React from "react";
 import MyAppHeader from "./MyAppHeader";
-import JobCard from "../../Components/Card/JobCard";
+
+import { useStateValue } from "../../Provider";
 
 function MyAppFav() {
+  const [{ user }, dispatch] = useStateValue();
+
+  console.log(user);
   return (
     <div>
       <MyAppHeader />

@@ -5,19 +5,28 @@ import { auth, provider } from "../../firebase";
 
 import "./Login.scss";
 import { ACTIONS } from "../../reducer";
+import { useHistory } from "react-router-dom";
 
 function Login() {
-  const [{ user }, dispatch] = useStateValue();
-
+  const [{}, dispatch] = useStateValue();
+  const history = useHistory();
   const signIn = () => {
     auth
       .signInWithPopup(provider)
       .then((res) => {
         console.log("res", res);
+        const dataUser = {
+          email: res.user.email,
+          name: res.user.displayName,
+          uid: res.user.uid,
+          token: res.user.refreshToken,
+          photo: res.user.photoURL,
+        };
         dispatch({
           type: ACTIONS.SET_USER,
-          payload: { user: res.user },
+          payload: { user: dataUser },
         });
+        history.push("/favorite");
       })
       .catch((error) => alert(error.message));
   };
