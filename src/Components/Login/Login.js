@@ -7,7 +7,7 @@ import "./Login.scss";
 import { ACTIONS } from "../../reducer";
 
 function Login() {
-  const [{}, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
 
   const signIn = () => {
     auth

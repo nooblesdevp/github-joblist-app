@@ -6,6 +6,7 @@ function MyAppFav() {
   return (
     <div>
       <MyAppHeader />
+      <h1>favorite</h1>
     </div>
   );
 }

@@ -8,10 +8,13 @@ import { useStateValue } from "../../Provider";
 export default function useFatchData(params, page) {
   const [state, dispatch] = useStateValue();
 
+  // const BASE_URL =
+  //   "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
   const BASE_URL =
-    "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
+    "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=ruby&page=1";
 
-  // const BASE_URL = "../../positions.json";
+  // const BASE_URL =
+  //   "https://jobs.github.com/positions.json?description=ruby&page=1";
 
   useEffect(() => {
     const cancelToken = axios.CancelToken.source();

@@ -14,7 +14,6 @@ function JobCard({ job }) {
   };
 
   return (
-    // <Link to="/modal-description">
     <>
       <Card className="jobCard my-1" onClick={() => setModalShow(true)}>
         <Card.Body>
@@ -45,7 +44,6 @@ function JobCard({ job }) {
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
-      {/* </Link> */}
     </>
   );
 }
