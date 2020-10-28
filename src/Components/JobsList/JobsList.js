@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { Button, Container, FormControl, InputGroup } from "react-bootstrap";
 import { useStateValue } from "../../Provider";

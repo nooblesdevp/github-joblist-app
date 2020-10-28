@@ -3,6 +3,8 @@ import { Button, Modal } from "react-bootstrap";
 import { MdPlace } from "react-icons/md";
 import Map from "../Map/Map";
 
+// import "leaflet/dist/leaflet.css";
+
 import "./ModalDesc.scss";
 
 export function ModalDescription({ company, title, location, desc, ...props }) {
@@ -20,7 +22,7 @@ export function ModalDescription({ company, title, location, desc, ...props }) {
       <div className="modalMap">
         <Map />
       </div>
-      <Modal.Header className="modal__heading my-4">
+      <Modal.Header className="modal__heading">
         <h5 className="modal__headingCompany">{company}</h5>
         <Modal.Title id="contained-modal-title-vcenter">{title}</Modal.Title>
         <h5 className="modal__headingLocation">

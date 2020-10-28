@@ -11,6 +11,7 @@ export default function useFatchData(params, page) {
   const BASE_URL =
     "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
 
+  // const BASE_URL = "../../positions.json";
   useEffect(() => {
     const cancelToken = axios.CancelToken.source();
     dispatch({ type: ACTIONS.MAKE_REQUEST });
