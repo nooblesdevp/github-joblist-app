@@ -2,6 +2,7 @@ import React from "react";
 import MyAppHeader from "./MyAppHeader";
 import { motion } from "framer-motion";
 import { useStateValue } from "../../Provider";
+import Login from "../Login/Login";
 
 function MyAppFav() {
   const [{ user }, dispatch] = useStateValue();
@@ -23,8 +24,15 @@ function MyAppFav() {
       },
     },
   };
-  console.log(user);
+  console.log("yahh", user);
   return (
+    // <>
+    //   {!user ? (
+    //     <Login />
+    //   ) : (
+
+    //   )}
+    // </>
     <>
       <MyAppHeader />
       <motion.div
