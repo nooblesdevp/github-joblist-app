@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
     "firebase": "^7.24.0",
+    "framer-motion": "^2.9.4",
     "leaflet": "^1.7.1",
     "node-sass": "^4.14.1",
     "proxy": "https://jobs.github.com",

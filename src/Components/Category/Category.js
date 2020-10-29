@@ -3,6 +3,7 @@ import { Button, Card, Container } from "react-bootstrap";
 import { FaServer } from "react-icons/fa";
 import { VscChromeClose, VscGlobe } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import "./Category.scss";
 
@@ -68,67 +69,92 @@ function Category({}) {
   const hanldeChoose = () => {
     setActive(!active);
   };
+  const project_variants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        duration: 0.5,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        ease: "easeInOut",
+      },
+    },
+  };
   return (
-    <Container className="category">
-      <div className="category__header">
-        <VscChromeClose className="category__headerIcon" />
-        <h3>Choose your skills</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni,
-          laudantium.
-        </p>
-      </div>
-      <div className="category__center">
-        <div className="category__centerColumn">
-          {categoriOne.map((item) => {
-            return (
-              <Card
-                onClick={hanldeChoose}
-                className={`category__container  ${active ? "active" : ""}  `}
-              >
-                <div className="category__grid">
-                  {item.icon}
-                  <h4>{item.label}</h4>
-                </div>
-              </Card>
-            );
-          })}
+    <motion.div
+      variants={project_variants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <Container className="category">
+        <div className="category__header">
+          <VscChromeClose className="category__headerIcon" />
+          <h3>Choose your skills</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni,
+            laudantium.
+          </p>
         </div>
-        <div className="category__centerColumn">
-          {categoriTwo.map((item) => {
-            return (
-              <Card
-                onClick={hanldeChoose}
-                className={`category__container  ${active ? "active" : ""}  `}
-              >
-                <div className="category__grid">
-                  {item.icon}
-                  <h4>{item.label}</h4>
-                </div>
-              </Card>
-            );
-          })}
+        <div className="category__center">
+          <div className="category__centerColumn">
+            {categoriOne.map((item) => {
+              return (
+                <Card
+                  onClick={hanldeChoose}
+                  className={`category__container  ${active ? "active" : ""}  `}
+                >
+                  <div className="category__grid">
+                    {item.icon}
+                    <h4>{item.label}</h4>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+          <div className="category__centerColumn">
+            {categoriTwo.map((item) => {
+              return (
+                <Card
+                  onClick={hanldeChoose}
+                  className={`category__container  ${active ? "active" : ""}  `}
+                >
+                  <div className="category__grid">
+                    {item.icon}
+                    <h4>{item.label}</h4>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+          <div className="category__centerColumn last">
+            {categoriThree.map((item) => {
+              return (
+                <Card
+                  onClick={hanldeChoose}
+                  className={`category__container  ${active ? "active" : ""}  `}
+                >
+                  <div className="category__grid">
+                    {item.icon}
+                    <h4>{item.label}</h4>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
         </div>
-        <div className="category__centerColumn last">
-          {categoriThree.map((item) => {
-            return (
-              <Card
-                onClick={hanldeChoose}
-                className={`category__container  ${active ? "active" : ""}  `}
-              >
-                <div className="category__grid">
-                  {item.icon}
-                  <h4>{item.label}</h4>
-                </div>
-              </Card>
-            );
-          })}
-        </div>
-      </div>
-      <Link to="/jobslist">
-        <Button className="category__btn">Next</Button>
-      </Link>
-    </Container>
+        <Link to="/jobslist">
+          <Button className="category__btn">Next</Button>
+        </Link>
+      </Container>
+    </motion.div>
   );
 }
 
