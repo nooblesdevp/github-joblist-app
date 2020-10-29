@@ -19,8 +19,8 @@
       a {
         flex: 1;
         text-align: center;
-        padding: 3px;
-        height: 30px;
+        padding: 8px;
+        height: 40px;
         color: var(--clr-primary-2);
       }
       .active {
@@ -28,5 +28,15 @@
         background: var(--clr-primary-6);
       }
     }
+  }
+  .fav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .fav__img {
+    width: 200px;
+    object-fit: contain;
+    margin-top: 200px;
   }
 }
