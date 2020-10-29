@@ -14,19 +14,17 @@
       padding: 4px;
       background: var(--clr-primary-5);
       border-radius: 15px;
+      justify-content: space-between;
 
-      button {
+      a {
         flex: 1;
-        background: var(--clr-primary-6);
-        border-radius: 10px;
-        border: none;
-        a {
-          text-decoration: none;
-          color: var(--clr-primary-2);
-          font-size: 17px;
-        }
+        text-align: center;
+        padding: 3px;
+        height: 30px;
+        color: var(--clr-primary-2);
       }
       .active {
+        border-radius: 14px;
         background: var(--clr-primary-6);
       }
     }

@@ -1,61 +1,63 @@
-.modal-dialog {
-  margin: 0;
-}
-.modal-content {
-  border: none;
-  height: 100vh;
-}
-.modal__heading {
-  margin-top: -27px;
-  z-index: 99;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-bottom: none;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  background: var(--clr-primary-6);
-  text-align: center;
+@media (max-width: 375px) {
+  .modal-dialog {
+    margin: 0;
+  }
+  .modal-content {
+    border: none;
+    height: 100vh;
+  }
+  .modal__heading {
+    margin-top: -27px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: none;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: var(--clr-primary-6);
+    text-align: center;
 
-  .modal__headingCompany {
+    .modal__headingCompany {
+      color: var(--clr-primary-3);
+    }
+    .modal__headingLocation {
+      color: var(--clr-primary-7);
+    }
+  }
+  .modalDesc__header {
+    background: var(--clr-primary-4);
+    height: 40px;
+    border-radius: 10px;
+    padding: 8px;
     color: var(--clr-primary-3);
   }
-  .modal__headingLocation {
-    color: var(--clr-primary-7);
+  .modalDesc__center {
+    margin: 20px 0;
+    p {
+      font-size: 15px;
+    }
   }
-}
-.modalDesc__header {
-  background: var(--clr-primary-4);
-  height: 40px;
-  border-radius: 10px;
-  padding: 8px;
-  color: var(--clr-primary-3);
-}
-.modalDesc__center {
-  margin: 20px 0;
-  p {
-    font-size: 15px;
-  }
-}
-.modal__footer {
-  border-top: none;
-  justify-content: space-between;
-  button {
-    border-radius: 10px;
-    height: 50px;
-  }
-  .modal__footerBtnright {
-    flex: 1;
-    border: none;
-    background: var(--clr-primary-1);
-  }
-  .modal__footerBtnleft {
-    border: 1px solid var(--clr-primary-5);
-    background: transparent;
-    flex: 0.1;
-    color: var(--clr-primary-1);
-    svg {
+  .modal__footer {
+    border-top: none;
+    justify-content: space-between;
+    button {
+      border-radius: 10px;
+      height: 50px;
+    }
+    .modal__footerBtnright {
+      flex: 1;
+      border: none;
+      background: var(--clr-primary-1);
+    }
+    .modal__footerBtnleft {
+      border: 1px solid var(--clr-primary-5);
+      background: transparent;
+      flex: 0.1;
       color: var(--clr-primary-1);
+      svg {
+        color: var(--clr-primary-1);
+      }
     }
   }
 }
